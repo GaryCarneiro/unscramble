@@ -1,4 +1,11 @@
 #!/usr/bin/env ruby
 
-wordlist = File.readlines('sowpods.txt')
-p wordlist.length
+$wordlist = Array.new
+File.readlines('sowpods.txt').each do |word|
+   $wordlist << word.chomp 
+end
+p $wordlist[1].class 
+
+if  $wordlist.include? "AXE"
+    print $wordlist.index "AXE"
+end
