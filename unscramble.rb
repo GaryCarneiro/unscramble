@@ -1,11 +1,16 @@
 #!/usr/bin/env ruby
 
-$wordlist = Array.new
-File.readlines('sowpods.txt').each do |word|
-   $wordlist << word.chomp 
+iword = ARGV[0].split(//)
+ 
+words = []
+list = File.read("sowpods.txt").split("\n")
+ 
+for i in (1..iword.length)
+               (iword.permutation(i).map &:join).each do |word|
+                              if list.include? word.upcase
+                  words << word
+                end
+               end
 end
-p $wordlist[1].class 
-
-if  $wordlist.include? "AXE"
-    print $wordlist.index "AXE"
-end
+ 
+p words.sort.uniq
