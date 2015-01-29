@@ -1,2 +1,4 @@
 unscramble
 ==========
+
+Scrabble cheat
