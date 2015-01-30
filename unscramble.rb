@@ -1,7 +1,13 @@
 #!/usr/bin/env ruby
 
 #Input word is first word
-iword = ARGV[0].split(//)
+if not ARGV[0].nil?
+  iword = ARGV[0].split(//)
+else
+  puts "Pass some scramble word string"
+  exit(1)
+end
+
  
 words = []
 #Line seperator for Mac "\r\n"
